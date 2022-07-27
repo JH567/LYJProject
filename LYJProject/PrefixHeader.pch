@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  LYJProject
+//
+//  Created by LYJ on 2022/1/26.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+////这里是弃用的属性
+//#pragma clang diagnostic pop
+
+
+// dispatch_semaphore - 锁
+#define SD_LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+#define SD_UNLOCK(lock) dispatch_semaphore_signal(lock);
+
+
+
+// 尺寸-距离
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define StatusBarHeight CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame])
+#define SafeAreaTopHeight (StatusBarHeight + 44.f)
+#define SafeAreaBottomHeight (StatusBarHeight > 20.f ? 34.f: 0)
+
+
+ 
+
+
+
+
+
+
+
+
+
+#endif /* PrefixHeader_pch */

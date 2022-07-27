@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LYJDrawingBoardViewController">
+            <connections>
+                <outlet property="drawingBoardVw" destination="hTA-2S-VnE" id="tdS-6o-s15"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-ER-3ZF">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="3eV-7b-QhD"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="清屏" id="Yyb-TA-e1N">
+                            <connections>
+                                <action selector="handleClearScreen:" destination="-1" id="jPb-mN-VBF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="回退" id="Dnr-pe-bMV">
+                            <connections>
+                                <action selector="handleBackOff:" destination="-1" id="xth-9P-gAP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="橡皮" id="kUf-Eu-YqL">
+                            <connections>
+                                <action selector="handleRubber:" destination="-1" id="JlI-N7-E32"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="flexibleSpace" id="x3t-He-N3t"/>
+                        <barButtonItem title="保存" id="vKh-cv-ksm">
+                            <connections>
+                                <action selector="handleSave:" destination="-1" id="dTB-bK-nkX"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32O-15-jaJ">
+                    <rect key="frame" x="0.0" y="742" width="414" height="120"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="hQo-Vd-32v">
+                            <rect key="frame" x="8" y="10" width="398" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="eUB-hb-gWa"/>
+                            </constraints>
+                            <connections>
+                                <action selector="handleLineWidth:" destination="-1" eventType="valueChanged" id="U6E-oR-3qg"/>
+                            </connections>
+                        </slider>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFJ-fp-oCP">
+                            <rect key="frame" x="10" y="59" width="124.5" height="41"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                            <connections>
+                                <action selector="handleLineColor:" destination="-1" eventType="touchUpInside" id="2Nt-mD-OWW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVx-Gh-SFQ">
+                            <rect key="frame" x="144.5" y="59" width="125" height="41"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                            <connections>
+                                <action selector="handleLineColor:" destination="-1" eventType="touchUpInside" id="s5i-M5-e0L"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ytl-hT-XRk">
+                            <rect key="frame" x="279.5" y="59" width="124.5" height="41"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                            <connections>
+                                <action selector="handleLineColor:" destination="-1" eventType="touchUpInside" id="WeX-1p-59q"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstItem="fVx-Gh-SFQ" firstAttribute="top" secondItem="hQo-Vd-32v" secondAttribute="bottom" constant="20" id="54W-DJ-cKx"/>
+                        <constraint firstItem="qFJ-fp-oCP" firstAttribute="top" secondItem="hQo-Vd-32v" secondAttribute="bottom" constant="20" id="5Pv-yh-Dha"/>
+                        <constraint firstItem="fVx-Gh-SFQ" firstAttribute="leading" secondItem="qFJ-fp-oCP" secondAttribute="trailing" constant="10" id="7qp-0G-Gx1"/>
+                        <constraint firstItem="Ytl-hT-XRk" firstAttribute="width" secondItem="qFJ-fp-oCP" secondAttribute="width" id="FFh-vx-5Hi"/>
+                        <constraint firstItem="fVx-Gh-SFQ" firstAttribute="width" secondItem="qFJ-fp-oCP" secondAttribute="width" id="Ipu-RA-bEi"/>
+                        <constraint firstItem="qFJ-fp-oCP" firstAttribute="leading" secondItem="32O-15-jaJ" secondAttribute="leading" constant="10" id="KYc-bW-WQw"/>
+                        <constraint firstAttribute="bottom" secondItem="Ytl-hT-XRk" secondAttribute="bottom" constant="20" id="LFh-np-ir1"/>
+                        <constraint firstItem="hQo-Vd-32v" firstAttribute="top" secondItem="32O-15-jaJ" secondAttribute="top" constant="10" id="VqP-AC-dxp"/>
+                        <constraint firstAttribute="trailing" secondItem="Ytl-hT-XRk" secondAttribute="trailing" constant="10" id="ct5-x0-JiP"/>
+                        <constraint firstAttribute="bottom" secondItem="qFJ-fp-oCP" secondAttribute="bottom" constant="20" id="iST-f8-T8f"/>
+                        <constraint firstAttribute="trailing" secondItem="hQo-Vd-32v" secondAttribute="trailing" constant="10" id="oSx-el-EbD"/>
+                        <constraint firstItem="hQo-Vd-32v" firstAttribute="leading" secondItem="32O-15-jaJ" secondAttribute="leading" constant="10" id="qIO-kd-u27"/>
+                        <constraint firstItem="Ytl-hT-XRk" firstAttribute="top" secondItem="hQo-Vd-32v" secondAttribute="bottom" constant="20" id="qeW-3B-p8j"/>
+                        <constraint firstAttribute="bottom" secondItem="fVx-Gh-SFQ" secondAttribute="bottom" constant="20" id="t0c-cH-NbC"/>
+                        <constraint firstAttribute="height" constant="120" id="xGO-Fw-sT1"/>
+                        <constraint firstItem="Ytl-hT-XRk" firstAttribute="leading" secondItem="fVx-Gh-SFQ" secondAttribute="trailing" constant="10" id="yIA-lM-eQ5"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTA-2S-VnE" customClass="LYJDrawingBoardView">
+                    <rect key="frame" x="0.0" y="88" width="414" height="654"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemGray5Color"/>
+            <constraints>
+                <constraint firstItem="32O-15-jaJ" firstAttribute="top" secondItem="hTA-2S-VnE" secondAttribute="bottom" id="2zT-R0-R7F"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hTA-2S-VnE" secondAttribute="trailing" id="6RR-9w-KUl"/>
+                <constraint firstItem="32O-15-jaJ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="FdC-B7-ciD"/>
+                <constraint firstItem="hTA-2S-VnE" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Jhv-l5-zh3"/>
+                <constraint firstItem="LMd-ER-3ZF" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Lbi-1R-M8l"/>
+                <constraint firstItem="hTA-2S-VnE" firstAttribute="top" secondItem="LMd-ER-3ZF" secondAttribute="bottom" id="dfJ-fT-l9R"/>
+                <constraint firstItem="LMd-ER-3ZF" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="eUL-d7-au9"/>
+                <constraint firstItem="LMd-ER-3ZF" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="gaL-Vf-fHz"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="32O-15-jaJ" secondAttribute="trailing" id="kHi-Nr-hp3"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="32O-15-jaJ" secondAttribute="bottom" id="y0Q-Nu-29W"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="88"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
